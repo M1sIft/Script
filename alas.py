@@ -506,12 +506,8 @@ class AzurLaneAutoScript:
                 del_cached_property(self, 'config')
                 continue
 
-            if task == 'Research':
-                logger.info('Skip task `Restart` at scheduler start')
-                self.config.task_stop()
-                del_cached_property(self, 'config')
-                continue
-            
+
+
             # Run
             logger.info(f'Scheduler: Start task `{task}`')
             self.device.stuck_record_clear()
